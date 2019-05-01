@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="_css/style.css">
+    <title>API GitHub</title>
+</head>
+
+<body>
+    <header>
+        <figure>
+            <img class="logo" src="_img/GitHub-Mark.png"/>
+        </figure>
+        <nav class="pesquisa">
+            <input class="pesquisa__input" type="text" id="userGit" placeholder="GitHub User">
+            <button class="pesquisa__botao" id="buscaUser">Buscar</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="resultado">
+            <h1 class="resultado__usuario" id="gitUser"></h1>
+            <article>
+                <button class="resultado__botao" id="buscaRepos">Repos</button>
+                <ul id="repos"></ul>
+            </article>
+            <article>
+                <button class="resultado__botao" id="buscaStarred">Starred</button>
+                <ul id="starred"></ul>
+            </article>
+        </section>
+    </main>
+    
+    <footer class="voltar">
+        <button class="voltar__botao" id="voltar">Voltar</button>
+    </footer>
+
+    <script src="_js/script.js"></script>
+
+</body></html>
