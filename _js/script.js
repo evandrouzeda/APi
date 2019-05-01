@@ -20,10 +20,14 @@
     // 2 - parte que busca os repositorio quando o botao repos e clicado
     async function buscaRepos() {
         const repos = await fetch(requisicao.resultado.repos_url),
-              reposResult = await repos.json();
+            reposResult = await repos.json();
         var repo = " ";
-        for (let i = 0; i < reposResult.length; i++) {
-            repo += "<li>" + reposResult[i].name + "</li>";
+        if (!reposResult.length) {
+            repo += "<li>Usuário não possui repositórios</li>";
+        } else {
+            for (let i = 0; i < reposResult.length; i++) {
+                repo += "<li>" + reposResult[i].name + "</li>";
+            }
         }
         document.getElementById("repos").innerHTML = repo;
     }
@@ -36,9 +40,14 @@
         const starred = await fetch(starred_url),
             starredResult = await starred.json();
         var star = " ";
-        for (let i = 0; i < starredResult.length; i++) {
-            star += "<li>" + starredResult[i].name + "</li>";
+        if (!starredResult.length) {
+            star += "<li>Não há repositórios Starred</li>";
+        } else {
+            for (let i = 0; i < starredResult.length; i++) {
+                star += "<li>" + starredResult[i].name + "</li>";
+            }
         }
+
         document.getElementById("starred").innerHTML = star;
     }
     const starredBusca = document.getElementById("buscaStarred");
@@ -52,7 +61,7 @@
             buscaUser();
         }
     });
-    
+
     //limpa o campo de pequisa e mostra o resultado
     function limpaPesquisa() {
         document.getElementsByTagName("header")[0].style.display = "none";
