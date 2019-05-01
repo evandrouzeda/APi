@@ -47,7 +47,6 @@
                 star += "<li>" + starredResult[i].name + "</li>";
             }
         }
-
         document.getElementById("starred").innerHTML = star;
     }
     const starredBusca = document.getElementById("buscaStarred");
