@@ -57,6 +57,7 @@
     userGit.addEventListener("keyup", function (evento) {
         if (evento.keyCode === 13) {
             evento.preventDefault();
+            document.getElementById("buscaUser").disabled = true;
             buscaUser();
         }
     });
